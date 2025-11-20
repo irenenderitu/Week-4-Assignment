@@ -44,35 +44,69 @@ header .logo h1 {
 
 /* Hero Section */
 .hero {
-  background-color: #e6f2ff;
-  text-align: center;
-  padding: 2rem 1rem;
   position: relative;
+  text-align: center;
+  color: white;
 }
 
 .hero img.hero-img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  margin-top: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #003366;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #e6b800;
 }
 
 /* Inventory Section - CSS Grid */
 .car-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 2rem 1rem;
 }
 
 .car-card {
-  border: 1px solid #ccc;
-  padding: 1rem;
+  position: relative;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
 .car-card img {
@@ -82,7 +116,24 @@ header .logo h1 {
 
 .car-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* Badges */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.25rem 0.5rem;
+  background-color: #ffcc00;
+  color: #003366;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.badge.featured {
+  background-color: #ff5733;
+  color: white;
 }
 
 /* About Section */
@@ -150,17 +201,10 @@ footer {
     gap: 0.5rem;
   }
 
-  .hero, .about {
-    text-align: left;
+  .hero-content {
+    top: 40%;
   }
 }
 
 @media (max-width: 480px) {
-  .car-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
+  .hero-conte
